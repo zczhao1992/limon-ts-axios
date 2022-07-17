@@ -1,15 +1,15 @@
 {
-  "name": "--libraryname--",
+  "name": "limon-ts-axios",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/--libraryname--.umd.js",
-  "module": "dist/--libraryname--.es5.js",
-  "typings": "dist/types/--libraryname--.d.ts",
+  "main": "dist/limon-ts-axios.umd.js",
+  "module": "dist/limon-ts-axios.es5.js",
+  "typings": "dist/types/limon-ts-axios.d.ts",
   "files": [
     "dist"
   ],
-  "author": "--username-- <--usermail-->",
+  "author": "zczhao1992 <zczhao1992@163.com>",
   "repository": {
     "type": "git",
     "url": ""
@@ -19,6 +19,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "dev": "node examples/server.js",
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
@@ -32,7 +33,6 @@
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
-    "postinstall": "ts-node tools/init",
     "travis-deploy-once": "travis-deploy-once"
   },
   "lint-staged": {
